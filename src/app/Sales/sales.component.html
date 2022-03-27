@@ -1,0 +1,70 @@
+<div class="table1 mt-3">
+    <table class="table table-dark" *ngIf="sales && sales.length">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Product Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Net Value</th>
+                <th scope="col">Action</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sale of sales;">
+                <td>{{sale.id}}</td>
+                <td>{{sale.productName}}</td>
+                <td>{{sale.quantity}}</td>
+                <td>{{sale.productCategory}}</td>
+                <td>{{sale.price}}</td>
+                <td>{{netValue()}}</td>
+                <td><button class="btn btn-primary" (Click)="editButtonClick(sale.id)">Edit</button>
+                <button class="btn btn-danger mx-3" (Click)="deleteButtonClick(sale.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- <dx-data-grid
+[dataSource]="sales"
+keyExpr="id"
+[allowColumnReordering]="true"
+[allowColumnResizing]="true"
+[showBorders]="true"
+[columnAutoWidth]="true"
+columnFixing.enabled="true"
+(onEditingStart)="logEvent('EditingStart')"
+(onInitNewRow)="logEvent('InitNewRow')"
+(onRowInserting)="logEvent('RowInserting')"
+(onRowInserted)="logEvent('RowInserted')"
+(onRowUpdating)="logEvent('RowUpdating')"
+(onRowUpdated)="logEvent('RowUpdated')"
+(onRowRemoving)="logEvent('RowRemoving')"
+(onRowRemoved)="logEvent('RowRemoved')"
+(onSaving)="logEvent('Saving')"
+(onSaved)="logEvent('Saved')"
+(onEditCanceling)="logEvent('EditCanceling')"
+(onEditCanceled)="logEvent('EditCanceled')">
+<dxo-paging [enabled]="true"></dxo-paging>
+<dxo-editing
+mode="row"
+[allowUpdating]="true"
+[allowDeleting]="true"
+[allowAdding]="true"
+>
+</dxo-editing>
+<dxi-column dataField="id"></dxi-column>
+<dxi-column dataField="productName"></dxi-column>
+<dxi-column
+    dataField="quantity"
+    dataType="string" [visible]="true">
+</dxi-column>
+<dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+<dxi-column dataField="productCategory"></dxi-column>
+<dxi-column dataField="price"></dxi-column>
+<dxi-column dataField="Net Value"[calculateCellValue]="calculateSalesAmount" ></dxi-column>
+</dx-data-grid> -->

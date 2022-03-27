@@ -26,10 +26,15 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": ["node_modules/devextreme/dist/css/dx.light.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "node_modules/devextreme/dist/css/dx.darkmoon.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/devextreme/dist/js/dx.all.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
